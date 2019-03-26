@@ -1,6 +1,6 @@
 system:
     health:
-        message: "Message from dev/adminservice-dev.yml"
+        message: "Message 2 from dev/adminservice-dev.yml"
 management:
     endpoints:
         web:
