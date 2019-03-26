@@ -1,2 +1,0 @@
-system.health.message: "Message from dev\adminservice.yml"
-management.endpoints.web.exposure.include: "*"
