@@ -1,0 +1,11 @@
+#common configuration for all environments
+spring.profile: common
+spring.profiles.include: common_spring
+---
+#dev environment specific configurations
+spring.profiles: dev
+spring.profiles.include: common
+---
+#test environment specific configurations
+spring.profiles: test
+spring.profiles.include: common
