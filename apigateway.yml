@@ -4,8 +4,8 @@ spring.profiles.include: common_spring
 ---
 #dev environment specific configurations
 spring.profiles: dev
-spring.profiles.include: common_dev
+#spring.profiles.include: common_dev
 ---
 #test environment specific configurations
 spring.profiles: test
-spring.profiles.include: common_test
+#spring.profiles.include: common_test
