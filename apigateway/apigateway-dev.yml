@@ -9,13 +9,6 @@ hystrix:
                 isolation:
                     thread:
                         timeoutInMilliseconds: 2000
-                        
-eureka:
-    client:
-        serviceUrl:
-            defaultZone: http://localhost:8889/eureka/
-    instance:
-        preferIpAddress: true
 spring:
   cloud:
     gateway:
