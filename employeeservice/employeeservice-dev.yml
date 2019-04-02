@@ -1,0 +1,5 @@
+info: "Message from employeeservice/employeeservice-dev.yml"
+server:
+    port: 8891
+    servlet:
+        context-path: /v1

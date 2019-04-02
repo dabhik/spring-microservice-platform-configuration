@@ -1,0 +1,32 @@
+info: "Message from apigateway/apigateway-dev.yml"
+server:
+    port: 8887
+    
+hystrix:
+    command:
+        fallbackcmd:
+            execution:
+                isolation:
+                    thread:
+                        timeoutInMilliseconds: 2000
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: adminservice
+        uri: lb://adminservice
+        predicates:
+        - Path=/api/adminservice/**
+        filters:
+        - name: RequestRateLimiter
+          args:
+            key-resolver: '#{@userKeyResolver}'
+            redis-rate-limiter.replenishRate: 2
+            redis-rate-limiter.burstCapacity: 2
+        - RewritePath=/api/(?<adminservice>.*), /$\v1\{adminservice}
+        - name: Hystrix
+          args:
+            name: booksFallbackCommand
+            fallbackUri: forward:/fallback/adminservice
+        - AddResponseHeader=X-Some-Header, com.deloitte.msplatform
+        

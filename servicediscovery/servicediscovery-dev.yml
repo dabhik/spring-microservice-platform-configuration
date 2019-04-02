@@ -1,0 +1,7 @@
+info: "Message from servicediscovery/servicediscovery-dev.yml"
+server:
+    port: 8889
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
