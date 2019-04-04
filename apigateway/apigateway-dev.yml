@@ -16,17 +16,17 @@ spring:
       - id: adminservice
         uri: lb://adminservice
         predicates:
-        - Path=/api/adminservice/**
+        - Path=/api/admin/**
         filters:
         - name: RequestRateLimiter
           args:
             key-resolver: '#{@userKeyResolver}'
             redis-rate-limiter.replenishRate: 2
             redis-rate-limiter.burstCapacity: 2
-        - RewritePath=/api/(?<adminservice>.*), /$\v1\{adminservice}
+        - RewritePath=/api/(?<admin>.*), /$\v1\{admin}
         - name: Hystrix
           args:
             name: booksFallbackCommand
-            fallbackUri: forward:/fallback/adminservice
+            fallbackUri: forward:/fallback/admin
         - AddResponseHeader=X-Some-Header, com.deloitte.msplatform
         
