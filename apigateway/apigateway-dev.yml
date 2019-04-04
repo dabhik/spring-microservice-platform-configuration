@@ -1,4 +1,4 @@
-info: Message from apigateway/apigateway-dev.yml
+info: "Message from apigateway-dev.yml"
 server:
     port: 8887
     
