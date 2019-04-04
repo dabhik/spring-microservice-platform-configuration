@@ -1,4 +1,6 @@
-info: "Message from adminservice/adminservice-dev.yml"
+system:
+    health:
+        message: "Message from adminservice/adminservice-dev.yml"
 server:
     port: 8890
     servlet:
