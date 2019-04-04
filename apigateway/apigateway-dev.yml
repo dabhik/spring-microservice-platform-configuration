@@ -1,4 +1,4 @@
-info: "Message from apigateway-dev.yml"
+info: "Message from apigateway-dev.yml
 server:
     port: 8887
     
@@ -23,7 +23,7 @@ spring:
             key-resolver: '#{@userKeyResolver}'
             redis-rate-limiter.replenishRate: 2
             redis-rate-limiter.burstCapacity: 2
-        - RewritePath=/api/(?<admin>.*), /$\/v1/{admin}
+        - RewritePath=/api/(?<admin>.*), /v1/$\{admin}
         - name: Hystrix
           args:
             name: booksFallbackCommand
