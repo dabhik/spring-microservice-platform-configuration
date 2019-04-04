@@ -29,3 +29,22 @@ spring:
             fallbackUri: forward:/fallback/admin
         - AddResponseHeader=X-Some-Header, com.deloitte.msplatform
         
+spring:
+  cloud:
+    discovery:
+      client:
+        simple:
+          instances:
+            apigateway:
+              - uri: http://localhost:8887
+                metadata:
+                  management.context-path: /management
+            adminservice:
+              - uri: http://localhost:8890
+                metadata:
+                  management.context-path: /management  
+            employeeservice:
+              - uri: http://localhost:8891
+                metadata:
+                  management.context-path: /management
+        
