@@ -1,5 +1,5 @@
 system:
-    health:
+    custom:
         message: "Message from adminservice/adminservice-dev.yml"
 server:
     port: 8890
